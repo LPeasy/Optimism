@@ -62,9 +62,8 @@ docs/landing-page-concept.png
 Implementation intentionally changes the hero copy to:
 
 ```text
-Modern Workflows,
-Transparent Designs,
+Modern Workflows.
+Transparent Designs.
 Human Relationships.
 Click to see if we can help you grow ->
 ```
-
