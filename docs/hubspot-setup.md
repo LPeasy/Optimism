@@ -1,5 +1,7 @@
 # HubSpot Setup
 
+Status: paused. The current launch path is Gmail-only intake, not HubSpot. Keep this file as an archive if HubSpot automation returns later. Use `docs/gmail-only-setup.md` for the active setup.
+
 ## Required Contact Properties
 
 Create these custom properties before publishing the form.
@@ -156,4 +158,3 @@ Unsubscribe: HubSpot unsubscribe token
 ```
 
 Do not launch until `POSTAL_ADDRESS` is replaced with a compliant business mailing address.
-

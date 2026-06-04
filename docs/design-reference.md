@@ -29,5 +29,4 @@ Intentional implementation changes from the concept:
 - Hero copy is replaced with the user-approved phrase.
 - Research proof copy uses source-backed language from the email funnel notes.
 - Form fields are code-native and complete.
-- HubSpot credentials remain launch-blocking placeholders.
-
+- HubSpot is paused; the current form path is Gmail-backed FormSubmit intake.

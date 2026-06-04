@@ -15,7 +15,7 @@ Secondary CTA: reply with one workflow
 
 Subject options:
 
-1. Your Optimism AI workflow checklist
+1. Your Optimism AI workflow resources
 2. Start with one workflow
 3. Welcome. Here is the practical first step.
 

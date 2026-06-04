@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Optimism | AI Workflow Risk Checklist</title>
+    <title>Optimism | AI Workflow Intake</title>
     <meta
       name="description"
       content="Optimism helps managers test whether one AI workflow is ready for governed implementation."
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <a class="skip-link" href="#checklist-form">Skip to checklist form</a>
+    <a class="skip-link" href="#intake-form">Skip to intake form</a>
 
     <header class="site-header">
       <nav class="nav-shell" aria-label="Primary navigation">
@@ -23,7 +23,7 @@
         </a>
         <div class="nav-links">
           <a href="#method">Method</a>
-          <a href="#checklist">Checklist</a>
+          <a href="#intake">Intake</a>
           <a href="#proof">Proof</a>
           <a data-booking-link href="#setup-required">Book call</a>
         </div>
@@ -44,7 +44,7 @@
               governed implementation before teams spend time, trust, or budget.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="#checklist-form">
+              <a class="button primary" href="#intake-form">
                 Click to see if we can help you grow -&gt;
               </a>
               <a class="button secondary" data-booking-link href="#setup-required">
@@ -57,23 +57,28 @@
             </p>
           </div>
 
-          <aside class="signup-panel" id="checklist-form" aria-labelledby="form-title">
+          <aside class="signup-panel" id="intake-form" aria-labelledby="form-title">
             <div class="form-copy">
-              <h2 id="form-title">Get the AI Workflow Risk Checklist</h2>
+              <h2 id="form-title">Start the AI Workflow Intake</h2>
               <p>
-                Use the checklist to pressure-test one workflow before an AI pilot.
+                Answer a few questions about your business, current AI pressure,
+                and the workflow worth improving first. After the intake sends,
+                you can open the optional worksheet and sales brief.
               </p>
             </div>
 
             <div class="setup-warning" id="setup-required" role="status">
-              Launch blocked until <code>HUBSPOT_PORTAL_ID</code>,
-              <code>HUBSPOT_FORM_ID</code>, <code>BOOKING_LINK</code>, and
-              <code>POSTAL_ADDRESS</code> are replaced.
+              Gmail intake is active after <code>CONTACT_EMAIL</code> and
+              <code>POSTAL_ADDRESS</code> are set. <code>BOOKING_LINK</code>
+              is optional.
             </div>
 
-            <div id="hubspot-form-target" class="hubspot-form-target" hidden></div>
-
-            <form class="lead-form" id="fallback-lead-form" novalidate>
+            <form
+              class="lead-form"
+              id="workflow-intake-form"
+              action="https://formsubmit.co/bc798d040aeefaf78c24be24823c8867"
+              method="POST"
+            >
               <label>
                 <span>Name</span>
                 <input name="name" autocomplete="name" required>
@@ -91,6 +96,44 @@
                 <input name="role" autocomplete="organization-title" required>
               </label>
               <label>
+                <span>What does your business or team do?</span>
+                <textarea
+                  name="business_summary"
+                  rows="3"
+                  placeholder="Example: We handle monthly board reporting for regional operations."
+                  required
+                ></textarea>
+              </label>
+              <label>
+                <span>Current AI use</span>
+                <select name="current_ai_use" required>
+                  <option value="">Select one</option>
+                  <option>Not using AI yet</option>
+                  <option>Informal experimentation</option>
+                  <option>Some recurring use</option>
+                  <option>Blocked by risk or security concerns</option>
+                  <option>Already using AI but hard to manage</option>
+                </select>
+              </label>
+              <label>
+                <span>Current AI challenge or need</span>
+                <textarea
+                  name="current_ai_challenge"
+                  rows="3"
+                  placeholder="Where is AI creating confusion, delay, rework, risk, or opportunity?"
+                  required
+                ></textarea>
+              </label>
+              <label>
+                <span>Workflow you would improve first</span>
+                <textarea
+                  name="workflow_candidate"
+                  rows="3"
+                  placeholder="Name one recurring workflow where speed, quality, evidence, or approval matters."
+                  required
+                ></textarea>
+              </label>
+              <label>
                 <span>Workflow type</span>
                 <select name="workflow_type" required>
                   <option value="">Select one</option>
@@ -103,13 +146,27 @@
                 </select>
               </label>
               <label>
-                <span>Biggest AI concern</span>
+                <span>Desired result</span>
+                <select name="desired_result" required>
+                  <option value="">Select one</option>
+                  <option>Save time</option>
+                  <option>Improve quality</option>
+                  <option>Support revenue or sales</option>
+                  <option>Reduce risk or rework</option>
+                  <option>Speed reporting</option>
+                  <option>Clarify whether AI fits</option>
+                </select>
+              </label>
+              <label>
+                <span>Biggest control gap or AI concern</span>
                 <select name="biggest_ai_concern" required>
                   <option value="">Select one</option>
+                  <option>Scope is unclear</option>
                   <option>Data boundaries</option>
-                  <option>Output quality</option>
-                  <option>Human approval</option>
-                  <option>Tool access</option>
+                  <option>Tool access or blocked actions</option>
+                  <option>Evidence and source support</option>
+                  <option>Human approval before business action</option>
+                  <option>Recovery or stop rules</option>
                   <option>Staff adoption</option>
                   <option>Unclear workflow fit</option>
                 </select>
@@ -127,36 +184,67 @@
               <input type="hidden" name="lead_source" value="optimism_landing_page">
               <input type="hidden" name="lead_score" value="10">
               <input type="hidden" name="optimism_funnel_signup" value="true">
+              <input type="hidden" name="_subject" value="AI Workflow Intake">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="worksheet_pdf" value="assets/ai-workflow-fit-worksheet-v1.pdf">
+              <input type="hidden" name="leavebehind_pdf" value="assets/optimism-ai-workflow-setup-brief-v1.pdf">
+              <input
+                type="hidden"
+                name="booking_link"
+                value="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2dqa5JcpExEoYPi5aPzILSfjcMrg64iFwFj3I3nDGNhPyYU6X4eZz817pbKwzU8_lEPSedoell"
+              >
+              <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
               <label class="consent-row">
                 <input name="consent" type="checkbox" required>
                 <span>
-                  I agree to receive the checklist and related Optimism workflow
-                  emails. I can unsubscribe at any time.
+                  I agree to send this intake to Optimism by email
+                  and receive related workflow emails. I can opt out at any time.
                 </span>
               </label>
               <button class="button form-button" type="submit">
-                Get the checklist
+                Send my intake
               </button>
               <p class="form-status" id="form-status" role="status"></p>
             </form>
+
+            <div class="post-submit-panel" id="post-submit-panel" hidden>
+              <h3>Next step</h3>
+              <p>
+                Your intake is in. Use the brief to understand the offer, keep
+                the worksheet for call prep, and book a Workflow Fit Call when
+                the workflow is clear enough to discuss.
+              </p>
+              <div class="post-submit-actions">
+                <a class="button primary" data-leavebehind-pdf href="assets/optimism-ai-workflow-setup-brief-v1.pdf" target="_blank" rel="noopener">
+                  Open brief
+                </a>
+                <a class="button secondary" data-worksheet-pdf href="assets/ai-workflow-fit-worksheet-v1.pdf" target="_blank" rel="noopener">
+                  Open worksheet
+                </a>
+                <a class="button secondary" data-booking-link href="#intake-form">
+                  Book fit call
+                </a>
+              </div>
+            </div>
           </aside>
         </div>
       </section>
 
-      <section class="visual-band" aria-label="Checklist preview">
+      <section class="visual-band" aria-label="Intake and workflow preview">
         <div class="visual-wrap">
           <img
             src="assets/checklist-workflow-visual.png"
-            alt="Checklist and workflow documents arranged on a clean desk"
+            alt="Intake and workflow documents arranged on a clean desk"
             width="1600"
             height="1000"
           >
         </div>
       </section>
 
-      <section class="content-section" id="checklist" aria-labelledby="checklist-title">
+      <section class="content-section" id="intake" aria-labelledby="intake-title">
         <div class="section-head">
-          <h2 id="checklist-title">What the checklist tests</h2>
+          <h2 id="intake-title">What the intake tests</h2>
           <p>
             The goal is not more AI paperwork. The goal is a workflow a manager
             can explain, approve, stop, and improve.
@@ -212,7 +300,7 @@
             <h3>Task fit determines whether AI helps.</h3>
             <p>
               Harvard and BCG research showed strong gains inside the AI frontier
-              and weaker outcomes outside it. The checklist tests that boundary.
+              and weaker outcomes outside it. The intake tests that boundary.
             </p>
           </article>
           <article>
@@ -228,9 +316,9 @@
 
       <section class="method-section" id="method" aria-labelledby="method-title">
         <div class="section-head">
-          <h2 id="method-title">How Optimism uses the checklist</h2>
+          <h2 id="method-title">How Optimism uses the intake</h2>
           <p>
-            The checklist is the entry point into a fixed-scope AI Governance Setup.
+            The intake is the entry point into a fixed-scope AI Governance Setup.
           </p>
         </div>
         <ol class="method-steps">
@@ -261,8 +349,8 @@
       <div>
         <p><span id="postal-address">POSTAL_ADDRESS</span></p>
         <p>
-          Email footer and unsubscribe handling are managed in HubSpot.
-          <a href="docs/hubspot-setup.md">Setup notes</a>
+          Intake submissions, replies, and opt-outs are handled in Gmail.
+          <a href="docs/gmail-only-setup.md">Setup notes</a>
         </p>
       </div>
     </footer>

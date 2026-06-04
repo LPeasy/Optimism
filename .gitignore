@@ -7,3 +7,6 @@ Thumbs.db
 .qa/
 dist/
 node_modules/
+__pycache__/
+*.pyc
+tmp/

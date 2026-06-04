@@ -270,7 +270,8 @@ img {
 }
 
 .lead-form input,
-.lead-form select {
+.lead-form select,
+.lead-form textarea {
   appearance: none;
   background: #fff;
   border: 1px solid #cbd8d3;
@@ -284,9 +285,19 @@ img {
 }
 
 .lead-form input:focus,
-.lead-form select:focus {
+.lead-form select:focus,
+.lead-form textarea:focus {
   border-color: var(--accent);
   outline: 3px solid rgba(18, 121, 102, 0.16);
+}
+
+.lead-form textarea {
+  resize: vertical;
+}
+
+.honeypot {
+  left: -9999px;
+  position: absolute;
 }
 
 .consent-row {
@@ -322,6 +333,29 @@ img {
   font-size: 13px;
   margin: 0;
   min-height: 19px;
+}
+
+.post-submit-panel {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  margin-top: 18px;
+  padding: 16px;
+}
+
+.post-submit-panel h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.post-submit-panel p {
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+
+.post-submit-actions {
+  display: grid;
+  gap: 10px;
 }
 
 .visual-band {
