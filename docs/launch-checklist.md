@@ -26,7 +26,10 @@
 - [x] Confirm the generated receiver payload includes the worksheet URL, sales brief URL, and intake answers.
 - [x] Send the test request only from a controlled test account.
 - [x] Confirm the request is visible in Gmail.
-- [ ] Apply or verify Gmail label: `Optimism/Cold Outreach`.
+- [x] Create Gmail label: `Optimism/Website Intake`.
+- [x] Apply `Optimism/Website Intake` to current `AI Workflow Intake` test messages.
+- [x] Mark current `AI Workflow Intake` test messages important.
+- [x] Create the Gmail web filter for future messages: from `submissions@formsubmit.co`, subject `AI Workflow Intake`, apply `Optimism/Website Intake`, mark important, never send to spam.
 - [ ] Record real inbound requests in the CRM tracker before follow-up.
 - [ ] Suppress any contact that opts out or says no.
 

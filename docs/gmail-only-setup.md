@@ -77,6 +77,9 @@ Non-Gmail hosted email: Zoho Mail or Proton Mail can host custom-domain email. T
 
 ## Gmail Operating Rules
 
+- Gmail label: `Optimism/Website Intake`.
+- Daily weekday rule: check the intake label once per business day.
+- Intake handling rule: add qualified website intake leads to the CRM tracker before any follow-up.
 - Search and triage replies under `Optimism/Cold Outreach`.
 - Use response labels for `Needs Reply`, `Call Interest`, `Referral Route`, `Opt Out`, and `Bounce Bad Route`.
 - Expect intake submissions from FormSubmit after the endpoint is activated.
