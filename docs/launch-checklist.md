@@ -63,4 +63,4 @@
 - [x] Confirm generated receiver payload contains name, email, company, role, business summary, AI use, AI challenge, workflow candidate, workflow type, desired result, concern, timeline, consent, worksheet PDF URL, sales brief URL, source, and lead score.
 - [x] Confirm footer displays the approved postal address.
 - [x] Confirm no HubSpot script loads in the browser.
-- [ ] After publishing, submit one public-URL smoke test to confirm the activated FormSubmit endpoint accepts the production page URL.
+- [x] After publishing, submit one public-URL smoke test to confirm the activated FormSubmit endpoint accepts the production page URL.
