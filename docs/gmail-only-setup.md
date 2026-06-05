@@ -21,9 +21,9 @@ POSTAL_ADDRESS: "959 Prudential Drive, Jacksonville, FL 32207"
 
 `CONTACT_EMAIL` is approved for the current public launch. Replace it with the custom-domain sender after the business email setup is complete.
 
-`WORKSHEET_PDF` points to the optional fillable one-page prep worksheet. The worksheet helps the respondent identify business context, current AI friction, the workflow they would improve first, desired outcome, control gaps, and call fit. The website form remains the canonical intake record.
+`WORKSHEET_PDF` points to the optional fillable one-page prep worksheet. The worksheet helps the respondent identify business context, current tools, current AI friction, the workflow they would improve first, manual handoffs, desired outcome, budget readiness, and call fit. The website form remains the canonical intake record.
 
-`LEAVE_BEHIND_PDF` points to the sales/proof brief. It explains the offer, GOV gate, ExampleCo synthetic demo, proof metrics, and next step. It is not an intake form.
+`LEAVE_BEHIND_PDF` points to the workflow software leave-behind brief. It explains the Human-First AI-Assisted Systems Design offer, build examples, process, controls, pricing, and next step. It is not an intake form.
 
 `FORM_ENDPOINT` uses FormSubmit's activated AJAX receiver token. The initial activation email was received and the endpoint was activated on 2026-06-04.
 
@@ -84,7 +84,7 @@ Non-Gmail hosted email: Zoho Mail or Proton Mail can host custom-domain email. T
 - Use response labels for `Needs Reply`, `Call Interest`, `Referral Route`, `Opt Out`, and `Bounce Bad Route`.
 - Expect intake submissions from FormSubmit after the endpoint is activated.
 - Record qualified inbound website intake submissions in the CRM tracker before follow-up.
-- Review the intake answers before proposing a Workflow Fit Call; the form is meant to help the respondent identify their needs, not just request a download.
+- Review the intake answers before proposing a Workflow Fit Call; the form is meant to help the respondent identify their needs, not just request a download. Key fields now include `tools_used`, `budget_readiness`, and hidden `offer_focus=human_first_ai_assisted_systems_design`.
 - Stop follow-up if a reply, booked call, opt-out, no, active opportunity, procurement route, legal route, vendor-registration route, or bad route appears.
 - Draft replies only with explicit approval. Do not auto-send.
 

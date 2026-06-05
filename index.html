@@ -6,7 +6,7 @@
     <title>Optimism | AI Workflow Intake</title>
     <meta
       name="description"
-      content="Optimism helps managers test whether one AI workflow is ready for governed implementation."
+      content="Optimism builds human-first, AI-assisted workflow systems for owner-led businesses."
     >
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="assets/checklist-workflow-visual.png" as="image">
@@ -22,9 +22,10 @@
           <span>Optimism</span>
         </a>
         <div class="nav-links">
-          <a href="#method">Method</a>
+          <a href="#build">Build</a>
+          <a href="#pricing">Pricing</a>
           <a href="#intake">Intake</a>
-          <a href="#proof">Proof</a>
+          <a href="#method">Method</a>
           <a data-booking-link href="#setup-required">Book call</a>
         </div>
       </nav>
@@ -35,25 +36,26 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <h1 id="hero-title">
-              <span>Modern Workflows.</span>
-              <span>Transparent Designs.</span>
-              <span>Human Relationships.</span>
+              <span>Custom Workflow Software.</span>
+              <span>Human-First Systems.</span>
+              <span>AI Where It Helps.</span>
             </h1>
             <p class="hero-lede">
-              Optimism helps managers test whether one AI workflow is ready for
-              governed implementation before teams spend time, trust, or budget.
+              Optimism builds practical internal tools for owner-led businesses:
+              intake forms, trackers, dashboards, handoffs, reports, and
+              AI-assisted steps that fit the way the business actually runs.
             </p>
             <div class="hero-actions">
               <a class="button primary" href="#intake-form">
-                Click to see if we can help you grow -&gt;
+                Start the AI Workflow Intake
               </a>
               <a class="button secondary" data-booking-link href="#setup-required">
                 Book a fit call
               </a>
             </div>
             <p class="quiet-note">
-              Start with one workflow. Leave with a clearer view of scope, data,
-              evidence, approvals, and pilot readiness.
+              Start with one messy workflow. Leave with clearer scope, a build
+              path, and a safer answer for where AI belongs.
             </p>
           </div>
 
@@ -61,9 +63,10 @@
             <div class="form-copy">
               <h2 id="form-title">Start the AI Workflow Intake</h2>
               <p>
-                Answer a few questions about your business, current AI pressure,
-                and the workflow worth improving first. After the intake sends,
-                you can open the optional worksheet and sales brief.
+                Tell us what your business does, which tools you already use,
+                and where manual work is slowing growth. The intake helps
+                identify whether a Workflow Build Sprint or smaller Blueprint
+                is the right next step.
               </p>
             </div>
 
@@ -100,7 +103,16 @@
                 <textarea
                   name="business_summary"
                   rows="3"
-                  placeholder="Example: We handle monthly board reporting for regional operations."
+                  placeholder="Example: We manage service jobs, estimates, scheduling, and customer follow-up."
+                  required
+                ></textarea>
+              </label>
+              <label>
+                <span>What tools do you already use?</span>
+                <textarea
+                  name="tools_used"
+                  rows="3"
+                  placeholder="Example: Gmail, Google Sheets, QuickBooks, Jobber, Airtable, Shopify, paper forms, or a shared inbox."
                   required
                 ></textarea>
               </label>
@@ -120,7 +132,7 @@
                 <textarea
                   name="current_ai_challenge"
                   rows="3"
-                  placeholder="Where is AI creating confusion, delay, rework, risk, or opportunity?"
+                  placeholder="Where could AI help, and where would it create risk, confusion, or rework?"
                   required
                 ></textarea>
               </label>
@@ -129,7 +141,7 @@
                 <textarea
                   name="workflow_candidate"
                   rows="3"
-                  placeholder="Name one recurring workflow where speed, quality, evidence, or approval matters."
+                  placeholder="Name one recurring workflow where handoffs, status, documents, follow-up, or reporting are messy."
                   required
                 ></textarea>
               </label>
@@ -137,11 +149,13 @@
                 <span>Workflow type</span>
                 <select name="workflow_type" required>
                   <option value="">Select one</option>
-                  <option>Finance or sales operations</option>
-                  <option>Proposal or grant package</option>
-                  <option>Research memo</option>
-                  <option>Board or management report</option>
-                  <option>Compliance evidence review</option>
+                  <option>Lead intake or quoting</option>
+                  <option>Job, project, or customer tracking</option>
+                  <option>Scheduling or team handoffs</option>
+                  <option>Customer follow-up</option>
+                  <option>Document or email generation</option>
+                  <option>Reporting or dashboard</option>
+                  <option>Lightweight CRM</option>
                   <option>Other recurring workflow</option>
                 </select>
               </label>
@@ -149,16 +163,16 @@
                 <span>Desired result</span>
                 <select name="desired_result" required>
                   <option value="">Select one</option>
-                  <option>Save time</option>
-                  <option>Improve quality</option>
+                  <option>Save owner or staff time</option>
+                  <option>Improve follow-up quality</option>
                   <option>Support revenue or sales</option>
-                  <option>Reduce risk or rework</option>
-                  <option>Speed reporting</option>
+                  <option>Reduce errors or rework</option>
+                  <option>Improve visibility into work</option>
                   <option>Clarify whether AI fits</option>
                 </select>
               </label>
               <label>
-                <span>Biggest control gap or AI concern</span>
+                <span>Biggest workflow or AI concern</span>
                 <select name="biggest_ai_concern" required>
                   <option value="">Select one</option>
                   <option>Scope is unclear</option>
@@ -181,9 +195,19 @@
                   <option>Later</option>
                 </select>
               </label>
+              <label>
+                <span>Budget readiness</span>
+                <select name="budget_readiness" required>
+                  <option value="">Select one</option>
+                  <option>Ready for a $5k+ build</option>
+                  <option>Need a smaller blueprint first</option>
+                  <option>Exploring fit</option>
+                </select>
+              </label>
               <input type="hidden" name="lead_source" value="optimism_landing_page">
               <input type="hidden" name="lead_score" value="10">
               <input type="hidden" name="optimism_funnel_signup" value="true">
+              <input type="hidden" name="offer_focus" value="human_first_ai_assisted_systems_design">
               <input type="hidden" name="_subject" value="AI Workflow Intake">
               <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_captcha" value="false">
@@ -211,9 +235,9 @@
             <div class="post-submit-panel" id="post-submit-panel" hidden>
               <h3>Next step</h3>
               <p>
-                Your intake is in. Use the brief to understand the offer, keep
-                the worksheet for call prep, and book a Workflow Fit Call when
-                the workflow is clear enough to discuss.
+                Your intake is in. Use the brief to understand the build offer,
+                keep the worksheet for call prep, and book a Workflow Fit Call
+                when the first workflow is clear enough to discuss.
               </p>
               <div class="post-submit-actions">
                 <a class="button primary" data-leavebehind-pdf href="assets/optimism-ai-workflow-setup-brief-v1.pdf" target="_blank" rel="noopener">
@@ -235,55 +259,121 @@
         <div class="visual-wrap">
           <img
             src="assets/checklist-workflow-visual.png"
-            alt="Intake and workflow documents arranged on a clean desk"
+            alt="Workflow intake and software planning documents arranged on a clean desk"
             width="1600"
             height="1000"
           >
         </div>
       </section>
 
-      <section class="content-section" id="intake" aria-labelledby="intake-title">
+      <section class="content-section" id="build" aria-labelledby="build-title">
         <div class="section-head">
-          <h2 id="intake-title">What the intake tests</h2>
+          <h2 id="build-title">What we build</h2>
           <p>
-            The goal is not more AI paperwork. The goal is a workflow a manager
-            can explain, approve, stop, and improve.
+            Start with one repeated business workflow and turn it into a simple
+            working system your team can actually use.
           </p>
         </div>
         <div class="control-grid">
           <article>
-            <h3>Scope</h3>
-            <p>Can the team name one workflow, output, owner, and review point?</p>
+            <h3>Intake systems</h3>
+            <p>Forms that collect the right details and route requests cleanly.</p>
           </article>
           <article>
-            <h3>Data</h3>
-            <p>Are approved inputs, prohibited data, and retention rules defined?</p>
+            <h3>Quote trackers</h3>
+            <p>Request, estimate, approval, and follow-up tracking in one place.</p>
+          </article>
+          <article>
+            <h3>Job dashboards</h3>
+            <p>Owner-friendly views for customers, jobs, status, tasks, and next action.</p>
+          </article>
+          <article>
+            <h3>Scheduling handoffs</h3>
+            <p>Cleaner transitions between inbox, calendar, team, and customer updates.</p>
+          </article>
+          <article>
+            <h3>Document and email flows</h3>
+            <p>Drafts, summaries, templates, and approval steps with human review.</p>
+          </article>
+          <article>
+            <h3>Lightweight CRM</h3>
+            <p>A practical customer record without forcing the business into heavy software.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="intake" aria-labelledby="intake-title">
+        <div class="section-head">
+          <h2 id="intake-title">What the intake surfaces</h2>
+          <p>
+            The goal is not an AI experiment. The goal is a useful system with
+            clear scope, known tools, practical handoffs, and enough control to
+            trust the result.
+          </p>
+        </div>
+        <div class="control-grid">
+          <article>
+            <h3>Workflow</h3>
+            <p>Can the business name one repeated process, owner, and output?</p>
           </article>
           <article>
             <h3>Tools</h3>
-            <p>Are allowed tools, blocked actions, and access limits clear?</p>
+            <p>What already runs the business: Gmail, sheets, calendars, forms, apps, or paper?</p>
           </article>
           <article>
-            <h3>Evidence</h3>
-            <p>Can material claims and exceptions be traced to source records?</p>
+            <h3>Handoffs</h3>
+            <p>Where do requests, status, documents, approvals, or follow-ups get lost?</p>
           </article>
           <article>
-            <h3>Approval</h3>
-            <p>Does a named human approve output before business action?</p>
+            <h3>Data</h3>
+            <p>What inputs are reliable, sensitive, missing, duplicated, or hard to find?</p>
           </article>
           <article>
-            <h3>Recovery</h3>
-            <p>Are stop conditions, incidents, and handoff rules documented?</p>
+            <h3>AI fit</h3>
+            <p>Where can AI draft, summarize, classify, or prepare work without taking over?</p>
+          </article>
+          <article>
+            <h3>Build scope</h3>
+            <p>Can the first version be built, tested, and handed off without sprawl?</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section pricing-section" id="pricing" aria-labelledby="pricing-title">
+        <div class="section-head">
+          <h2 id="pricing-title">Start with one buildable workflow</h2>
+          <p>
+            Pricing stays tied to scope. The intake tells us whether the work is
+            ready for a build sprint or needs a smaller blueprint first.
+          </p>
+        </div>
+        <div class="proof-list">
+          <article class="price-card">
+            <p class="proof-label">Main offer</p>
+            <h3>Workflow Build Sprint</h3>
+            <p class="price-number">Starts at $5,000</p>
+            <p>Map one workflow, build the working tool, connect the needed inputs, and hand off the system.</p>
+          </article>
+          <article>
+            <p class="proof-label">Smaller first step</p>
+            <h3>Workflow Blueprint</h3>
+            <p class="price-number">Starts at $1,500</p>
+            <p>Use when the workflow is real but the scope, tools, or build path needs to be clarified first.</p>
+          </article>
+          <article>
+            <p class="proof-label">Fit rule</p>
+            <h3>No broad transformation pitch</h3>
+            <p>We start with one owner, one repeated workflow, one visible bottleneck, and one useful first version.</p>
           </article>
         </div>
       </section>
 
       <section class="proof-section" id="proof" aria-labelledby="proof-title">
         <div class="section-head">
-          <h2 id="proof-title">Why controlled implementation matters</h2>
+          <h2 id="proof-title">Why human-first AI assistance matters</h2>
           <p>
-            AI gains are real, but they depend on task fit, workflow design, and
-            operating control.
+            AI can help, but the system still needs a human owner, useful data,
+            clear approval, and a recovery path when the work does not fit.
           </p>
         </div>
         <div class="proof-list">
@@ -291,24 +381,24 @@
             <p class="proof-label">Productivity</p>
             <h3>AI assistance can raise output per hour.</h3>
             <p>
-              NBER research found average productivity lift in customer support.
-              Optimism translates that lesson into controlled internal workflows.
+              The practical question is where it belongs in the workflow:
+              drafting, summarizing, classifying, preparing, or checking work.
             </p>
           </article>
           <article>
             <p class="proof-label">Quality</p>
             <h3>Task fit determines whether AI helps.</h3>
             <p>
-              Harvard and BCG research showed strong gains inside the AI frontier
-              and weaker outcomes outside it. The intake tests that boundary.
+              A good build defines what the system may do, what it must not do,
+              and when a person approves the next business action.
             </p>
           </article>
           <article>
-            <p class="proof-label">Scaling gap</p>
-            <h3>Use is spreading faster than operating discipline.</h3>
+            <p class="proof-label">Ownership</p>
+            <h3>Small businesses need usable systems.</h3>
             <p>
-              McKinsey and Census signals show adoption momentum, while NIST
-              points to governance, measurement, and ongoing management.
+              The output should be clear enough for the owner, staff, and future
+              support partner to understand after the sprint is done.
             </p>
           </article>
         </div>
@@ -316,26 +406,27 @@
 
       <section class="method-section" id="method" aria-labelledby="method-title">
         <div class="section-head">
-          <h2 id="method-title">How Optimism uses the intake</h2>
+          <h2 id="method-title">How the sprint works</h2>
           <p>
-            The intake is the entry point into a fixed-scope AI Governance Setup.
+            Human-First AI-Assisted Systems Design means the workflow leads and
+            AI supports. The first version must be usable before it is clever.
           </p>
         </div>
         <ol class="method-steps">
           <li>
             <span>01</span>
-            <h3>Setup</h3>
-            <p>Create the governed work package: scope, owners, data boundaries, risk register, evaluation plan, and manager brief.</p>
+            <h3>Map</h3>
+            <p>Name the workflow, owner, inputs, tools, handoffs, approval points, and first useful result.</p>
           </li>
           <li>
             <span>02</span>
-            <h3>Sprint</h3>
-            <p>Build and test the workflow inside approved inputs, tools, evidence rules, and human approval gates.</p>
+            <h3>Build</h3>
+            <p>Create the working tool, connect the needed systems, and add AI only where it improves the workflow.</p>
           </li>
           <li>
             <span>03</span>
-            <h3>Retainer</h3>
-            <p>Track proof metrics, review changes, close risks, and prevent useful workflows from drifting.</p>
+            <h3>Handoff and support</h3>
+            <p>Document the system, train the owner or operator, fix launch issues, and decide what to improve next.</p>
           </li>
         </ol>
       </section>
@@ -344,7 +435,7 @@
     <footer class="site-footer">
       <div>
         <strong>Optimism</strong>
-        <p>Governed AI workflows for serious work.</p>
+        <p>Human-first workflow software for owner-led businesses.</p>
       </div>
       <div>
         <p><span id="postal-address">POSTAL_ADDRESS</span></p>

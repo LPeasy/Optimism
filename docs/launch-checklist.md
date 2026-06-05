@@ -3,8 +3,8 @@
 ## Static Page
 
 - [x] Confirm `CONTACT_EMAIL` in `script.js` points to the approved public-launch Gmail inbox.
-- [x] Confirm `WORKSHEET_PDF` in `script.js` points to the optional fillable prep worksheet.
-- [x] Confirm `LEAVE_BEHIND_PDF` in `script.js` points to the sales/proof brief.
+- [x] Confirm `WORKSHEET_PDF` in `script.js` points to the optional fillable AI Workflow Intake prep worksheet.
+- [x] Confirm `LEAVE_BEHIND_PDF` in `script.js` points to the workflow software brief.
 - [x] Confirm `FORM_ENDPOINT` in `script.js` points to the backend-free FormSubmit AJAX receiver.
 - [x] Confirm `POSTAL_ADDRESS` in `script.js` is the approved business mailing address.
 - [x] Point `BOOKING_LINK` to the Google Calendar appointment schedule booking-page URL.
@@ -15,9 +15,9 @@
 
 ## Gmail-Only Intake
 
-- [x] Create the one-page fillable `AI Workflow Fit Worksheet v1` prep PDF.
-- [x] Create the `Optimism AI Workflow Setup Brief v1` leave-behind PDF.
-- [x] Wire the page form around business context, current AI use, AI challenge, workflow candidate, desired result, control gap, and timeline.
+- [x] Create the one-page fillable `AI Workflow Intake Worksheet v1` prep PDF.
+- [x] Create the `Optimism Workflow Software Brief v1` leave-behind PDF.
+- [x] Wire the page form around business context, current tools, current AI use, AI challenge, workflow candidate, desired result, control gap, timeline, budget readiness, and offer focus.
 - [x] Hide the worksheet and sales/proof brief until after a successful intake submission.
 - [x] Submit the first live FormSubmit activation test from the page.
 - [x] Activate the FormSubmit endpoint from the Gmail activation email.
@@ -63,7 +63,7 @@
 - [x] Start a local preview.
 - [x] Submit the form with all fields completed.
 - [x] Confirm required-field validation works.
-- [x] Confirm generated receiver payload contains name, email, company, role, business summary, AI use, AI challenge, workflow candidate, workflow type, desired result, concern, timeline, consent, worksheet PDF URL, sales brief URL, source, and lead score.
+- [x] Confirm generated receiver payload contains name, email, company, role, business summary, tools used, AI use, AI challenge, workflow candidate, workflow type, desired result, concern, timeline, budget readiness, offer focus, consent, worksheet PDF URL, sales brief URL, source, and lead score.
 - [x] Confirm footer displays the approved postal address.
 - [x] Confirm no HubSpot script loads in the browser.
 - [x] After publishing, submit one public-URL smoke test to confirm the activated FormSubmit endpoint accepts the production page URL.

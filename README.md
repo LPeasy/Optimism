@@ -1,10 +1,10 @@
 # Optimism Landing Page
 
-Static GitHub Pages landing page for Optimism's backend-free AI workflow intake funnel.
+Static GitHub Pages landing page for Optimism's backend-free workflow software intake funnel.
 
 ## Purpose
 
-Convert interested visitors into FormSubmit-routed Gmail intake submissions and, when qualified, into booked Workflow Fit Calls.
+Convert interested owner-led businesses into FormSubmit-routed Gmail intake submissions and, when qualified, into booked Workflow Fit Calls for Human-First AI-Assisted Systems Design.
 
 ## Local Preview
 
@@ -20,11 +20,11 @@ Open:
 http://localhost:4173
 ```
 
-The page is intentionally simple: the website form is the canonical intake. It posts to a static FormSubmit receiver, then reveals the optional worksheet, sales brief, and booking link. These values live in `script.js`:
+The page is intentionally simple: the website form is the canonical intake. It posts to a static FormSubmit receiver, then reveals the optional worksheet, workflow software brief, and booking link. These values live in `script.js`:
 
 - `CONTACT_EMAIL` - required; approved Gmail inbox for current public launch.
-- `WORKSHEET_PDF` - required; points to the fillable one-page prep worksheet in `assets/ai-workflow-fit-worksheet-v1.pdf`.
-- `LEAVE_BEHIND_PDF` - required; points to the sales/proof brief in `assets/optimism-ai-workflow-setup-brief-v1.pdf`.
+- `WORKSHEET_PDF` - required; points to the fillable one-page AI Workflow Intake prep worksheet in `assets/ai-workflow-fit-worksheet-v1.pdf`.
+- `LEAVE_BEHIND_PDF` - required; points to the workflow software leave-behind brief in `assets/optimism-ai-workflow-setup-brief-v1.pdf`.
 - `FORM_ENDPOINT` - required; activated FormSubmit AJAX endpoint that routes submissions into Gmail.
 - `POSTAL_ADDRESS` - required for commercial email footers.
 - `BOOKING_LINK` - optional; use a Google Calendar appointment schedule booking-page URL when ready. When blank, booking CTAs route to the intake form.
@@ -46,7 +46,7 @@ Use `docs/gmail-only-setup.md` for the current operating path:
 
 - static FormSubmit intake with mailto fallback
 - optional fillable PDF prep worksheet
-- sales/proof leave-behind PDF
+- workflow software leave-behind PDF
 - Google Calendar appointment schedule as the booking link
 - Gmail label and reply triage
 - manual opt-out suppression
@@ -65,8 +65,7 @@ docs/landing-page-concept.png
 Implementation intentionally changes the hero copy to:
 
 ```text
-Modern Workflows.
-Transparent Designs.
-Human Relationships.
-Click to see if we can help you grow ->
+Custom Workflow Software.
+Human-First Systems.
+AI Where It Helps.
 ```

@@ -151,7 +151,7 @@ def footer(canvas, doc):
     canvas.line(0.5 * inch, 0.48 * inch, 8.0 * inch, 0.48 * inch)
     canvas.setFont("Helvetica", 7.5)
     canvas.setFillColor(MUTED)
-    canvas.drawString(0.5 * inch, 0.32 * inch, "Optimism - AI Workflow Setup Brief v1")
+    canvas.drawString(0.5 * inch, 0.32 * inch, "Optimism - Workflow Software Brief v1")
     canvas.drawRightString(8.0 * inch, 0.32 * inch, f"Page {doc.page}")
     canvas.restoreState()
 
@@ -165,9 +165,9 @@ def build_pdf():
         rightMargin=0.5 * inch,
         topMargin=0.55 * inch,
         bottomMargin=0.65 * inch,
-        title="Optimism AI Workflow Setup Brief v1",
+        title="Optimism Workflow Software Brief v1",
         author="Optimism",
-        subject="Sales and proof leave-behind for governed AI workflow setup",
+        subject="Sales leave-behind for human-first AI-assisted workflow systems",
     )
 
     full = 7.5 * inch
@@ -176,43 +176,43 @@ def build_pdf():
 
     story = [
         p("OPTIMISM", "eyebrow"),
-        p("AI Workflow Setup Brief", "title"),
+        p("Human-First AI-Assisted Systems Design", "title"),
         p(
-            "A practical path for turning one messy recurring workflow into a governed AI workflow a manager can explain, test, approve, and improve.",
+            "A practical path for turning one messy recurring workflow into custom workflow software an owner can use, explain, and improve.",
             "subtitle",
         ),
         header_card(
             "The point is not broad AI transformation.",
-            "The point is one useful workflow with clear scope, approved inputs, source support, human approval, stop rules, and a measured pilot path.",
+            "The point is one useful internal system: clearer intake, cleaner tracking, better handoffs, faster documents or emails, useful reporting, and AI assistance only where it improves the work.",
         ),
         Spacer(1, 0.18 * inch),
         p("Where Optimism fits", "section"),
         Table(
             [
                 [
-                    card("Good first workflow", "Repeated work with review burden, stable sources, and visible rework, delay, or risk.", third),
-                    card("Weak first workflow", "Vague AI training, autonomous production action, unclear data boundaries, or no named owner.", third),
-                    card("Buyer pattern", "An operating owner, technical or security reviewer, operator, and output reviewer.", third),
+                    card("Good first workflow", "Repeated work with visible delay, missed follow-up, manual copying, unclear status, reporting burden, or review friction.", third),
+                    card("Weak first workflow", "No named owner, no repeatable process, unclear data boundary, autonomous AI action, or no measurable business pain.", third),
+                    card("Buyer pattern", "An owner-led business with one practical workflow worth fixing before broader automation.", third),
                 ]
             ],
             colWidths=[third, third, third],
             style=[("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 0), ("RIGHTPADDING", (0, 0), (-1, -1), 0)],
         ),
         Spacer(1, 0.16 * inch),
-        p("The operating controls", "section"),
+        p("What the system needs to know", "section"),
         Table(
             [
                 [
-                    card("Scope", "One workflow, output, owner, and review point.", half),
-                    card("Data", "Approved inputs, prohibited data, retention, and access limits.", half),
+                    card("Workflow", "One trigger, owner, output, handoff, and review point.", half),
+                    card("Tools", "The current inboxes, calendars, spreadsheets, documents, forms, CRM, and job software already in use.", half),
                 ],
                 [
-                    card("Tools", "Allowed tools, blocked actions, permissions, and change control.", half),
-                    card("Evidence", "Source register, assumptions, exceptions, and traceable claims.", half),
+                    card("Data", "Approved inputs, sensitive information, retention, and access limits.", half),
+                    card("Handoffs", "Who receives what, when, and with what context.", half),
                 ],
                 [
-                    card("Approval", "Named human review before business action.", half),
-                    card("Recovery", "Stop conditions, incidents, rollback, and handoff rules.", half),
+                    card("AI fit", "Where drafting, summarizing, classifying, extracting, or checking can help without replacing judgment.", half),
+                    card("Support", "Training, documentation, stop rules, change control, and iteration path.", half),
                 ],
             ],
             colWidths=[half, half],
@@ -230,10 +230,11 @@ def build_pdf():
         p("How the engagement moves", "section"),
         Table(
             [
-                [p("1. Workflow Fit Call", "card_title"), p("Confirm the workflow, buyer pattern, data boundary, and first useful metric.", "body")],
-                [p("2. AI Governance Setup", "card_title"), p("Create the manager-readable work package, run the GOV acceptance gate, and decide whether the workflow is pilot-ready.", "body")],
-                [p("3. Implementation Sprint", "card_title"), p("Build the governed workflow with source support, evaluation checks, approval path, training, and rollback plan.", "body")],
-                [p("4. Operations Retainer", "card_title"), p("Track drift, changes, proof metrics, risks, access, and adjacent workflow opportunities.", "body")],
+                [p("1. AI Workflow Intake", "card_title"), p("Capture the business, current tools, messy workflow, AI questions, timeline, and budget readiness.", "body")],
+                [p("2. Workflow Fit Call", "card_title"), p("Confirm whether the workflow is specific enough and valuable enough for a fixed-scope build.", "body")],
+                [p("3. Workflow Blueprint", "card_title"), p("Optional smaller package, starting at $1,500, to map the workflow, define the system, and price the build.", "body")],
+                [p("4. Workflow Build Sprint", "card_title"), p("Main package, starting at $5,000, to build the system, wire handoffs, test the workflow, and hand it off.", "body")],
+                [p("5. Support and Iteration", "card_title"), p("Tune the system after real use and identify adjacent workflows when useful.", "body")],
             ],
             colWidths=[1.95 * inch, 5.55 * inch],
             style=[
@@ -249,12 +250,12 @@ def build_pdf():
         ),
         Spacer(1, 0.2 * inch),
         p("PROOF AND NEXT STEP", "eyebrow"),
-        p("Governance becomes useful when it is testable.", "title"),
+        p("Controls make the build easier to trust.", "title"),
         p(
-            "Optimism's governance kit gives the workflow a visible operating spine: manager brief, data policy, risk register, evaluation plan, run log, change control, and acceptance tests.",
+            "Optimism's governance kit supports the software build with a visible operating spine: scope, data boundaries, tool permissions, human review, change control, and acceptance checks.",
             "subtitle",
         ),
-        p("What the GOV gate proves", "section"),
+        p("What the controls prove", "section"),
         Table(
             [
                 [
@@ -272,7 +273,7 @@ def build_pdf():
         Table(
             [
                 [p("Before", "card_title"), p("Spreadsheet-heavy commission packet review with unclear scope, no formal data boundary, weak approval trace, and inconsistent evidence.", "body")],
-                [p("After setup", "card_title"), p("A governed work package defines owners, approved inputs, approval gates, risk controls, evaluation checks, source records, and manager stop rules.", "body")],
+                [p("After setup", "card_title"), p("A structured workflow package defines owners, approved inputs, approval gates, risk controls, evaluation checks, source records, and stop rules.", "body")],
                 [p("Modeled pilot signal", "card_title"), p("Manager prep time down 66%, rework down 12 points, approval trace complete, and unresolved high risks closed before pilot. Synthetic demo metrics, not client production claims.", "body")],
             ],
             colWidths=[1.45 * inch, 6.05 * inch],
@@ -291,8 +292,8 @@ def build_pdf():
         p("The six proof metrics", "section"),
         Table(
             [
-                [p("Time saved", "small_center"), p("Approval speed", "small_center"), p("Error reduction", "small_center")],
-                [p("Evidence quality", "small_center"), p("Risk findings closed", "small_center"), p("Repeat usage", "small_center")],
+                [p("Time saved", "small_center"), p("Faster follow-up", "small_center"), p("Fewer handoff misses", "small_center")],
+                [p("Error reduction", "small_center"), p("Better visibility", "small_center"), p("Repeat usage", "small_center")],
             ],
             colWidths=[third, third, third],
             style=[
@@ -307,8 +308,8 @@ def build_pdf():
         ),
         Spacer(1, 0.18 * inch),
         header_card(
-            "Next step: bring one workflow.",
-            "A 20-minute Workflow Fit Call should answer whether the workflow is specific enough, valuable enough, and controlled enough to justify a fixed-scope AI Governance Setup.",
+            "Next step: start the AI Workflow Intake.",
+            "The intake should answer what the business does, what tools it already uses, where work gets messy, whether AI fits, and whether the next step is a Workflow Build Sprint, smaller Blueprint, or no project yet.",
         ),
         Spacer(1, 0.14 * inch),
         p(

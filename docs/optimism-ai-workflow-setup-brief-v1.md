@@ -1,80 +1,89 @@
-# Optimism AI Workflow Setup Brief v1
+# Optimism Workflow Software Brief v1
 
-Purpose: sales and proof leave-behind after the website intake is submitted.
+Purpose: leave-behind after the website intake is submitted.
 
 This artifact sells the offer. It is not an intake form.
 
 ## Core Message
 
-Optimism turns one messy recurring workflow into a governed AI workflow a manager can explain, test, approve, and improve.
+Optimism builds human-first, AI-assisted workflow systems for owner-led businesses.
 
-The point is not broad AI transformation. The point is one useful workflow with clear scope, approved inputs, source support, human approval, stop rules, and a measured pilot path.
+The point is not broad AI transformation. The point is one useful internal system that makes a recurring workflow easier to run: clearer intake, cleaner tracking, better handoffs, faster documents or emails, useful reporting, and AI assistance only where it improves the work.
 
-## Best First Workflow
+## Primary Offer
 
-Good first workflows have:
+Human-First AI-Assisted Systems Design.
 
-- repeated work
-- visible review burden
-- stable sources
-- rework, delay, compliance concern, revenue friction, or trust risk
-- a named operating owner
-- human approval before business action
+Optimism maps one messy workflow, turns it into a scoped build plan, builds the practical software surface, and hands it off with controls the owner can understand.
 
-Weak first workflows have:
+The main sellable package is the Workflow Build Sprint, starting at $5,000. Scope is confirmed after the AI Workflow Intake and fit conversation.
 
-- vague AI training needs
-- no named workflow
-- autonomous production action as the first ask
+The smaller entry point is the Workflow Blueprint, starting at $1,500, for owners who need the workflow mapped and priced before committing to a build.
+
+## What We Build
+
+Good first systems include:
+
+- intake forms that capture the right information the first time
+- quote, request, or lead trackers
+- job, customer, or project dashboards
+- scheduling and team handoff workflows
+- document or email generation with human review
+- reporting views that replace manual spreadsheet summaries
+- lightweight CRM workflows for follow-up and lead status
+
+Weak first systems have:
+
+- no named owner
+- no repeatable workflow
 - unclear data boundaries
-- no buyer, reviewer, or operator
+- no clear decision or handoff point
+- autonomous AI action as the first ask
+- no measurable business pain
 
-## Operating Controls
+## Design Controls
 
-Optimism frames first-pilot readiness around six controls:
+Optimism keeps controls practical and tied to the software-build promise:
 
-- Scope: workflow, output, owner, and review point
-- Data: approved inputs, prohibited data, retention, and access limits
-- Tools: allowed tools, blocked actions, permissions, and change control
-- Evidence: source register, assumptions, exceptions, and traceable claims
-- Approval: named human review before business action
-- Recovery: stop conditions, incidents, rollback, and handoff rules
+- Workflow: one recurring process, owner, trigger, output, and review point
+- Tools: the current apps, spreadsheets, inboxes, calendars, and documents already in use
+- Data: approved inputs, sensitive information, retention, and access limits
+- Handoffs: who receives what, when, and with what context
+- AI fit: which steps benefit from drafting, summarizing, classifying, extracting, or checking
+- Support: training, documentation, change control, stop rules, and iteration path
 
 ## Engagement Path
 
-1. Workflow Fit Call: confirm the workflow, buyer pattern, data boundary, and first useful metric.
-2. AI Governance Setup: create the manager-readable work package, run the GOV acceptance gate, and decide whether the workflow is pilot-ready.
-3. Implementation Sprint: build the governed workflow with source support, evaluation checks, approval path, training, and rollback plan.
-4. Operations Retainer: track drift, changes, proof metrics, risks, access, and adjacent workflow opportunities.
+1. AI Workflow Intake: identify the business, current tools, messy workflow, AI questions, timeline, and budget readiness.
+2. Workflow Fit Call: confirm whether the workflow is specific enough and valuable enough for a fixed-scope build.
+3. Workflow Blueprint: optional smaller package to map the workflow, define the system, and price the build.
+4. Workflow Build Sprint: build the system, wire the handoffs, test the workflow, and hand it off.
+5. Support and Iteration: tune the system after real use and identify adjacent workflows when useful.
 
 ## Proof Story
 
-The GOV gate makes governance testable:
+The governance kit still matters, but it supports the build. It keeps the system explainable, testable, and owner-controlled.
 
-- GOV-001 proves the baseline package is complete, internally linked, and manager-readable.
-- GOV-002 and GOV-003 prove data handling and tool permissions are bounded before implementation.
-- GOV-004 and GOV-005 prove source evidence and manager handoff are reviewable before pilot use.
-
-The synthetic ExampleCo case study shows a commission-review workflow moving from unclear scope, weak data boundaries, and informal approval into a governed work package with risk controls, source records, evaluation checks, and manager stop rules.
+The synthetic ExampleCo case study shows a spreadsheet-heavy review process moving from unclear scope, weak data boundaries, and informal approval into a structured workflow package with owners, approved inputs, risk controls, source records, evaluation checks, and stop rules.
 
 Modeled demo metrics include manager prep time down 66%, rework down 12 points, approval trace complete, and unresolved high risks closed before pilot. These are synthetic demo metrics, not client production claims.
 
 ## Proof Metrics
 
-Optimism tracks six proof metrics across setup, sprint, and retainer work:
+Optimism tracks practical operating metrics across blueprint, build, and support work:
 
-- time saved
-- approval speed
-- error reduction
-- evidence quality
-- risk findings closed
-- repeat usage
+- owner or staff time saved
+- faster follow-up or approval
+- fewer missed handoffs
+- lower rework or error rate
+- better visibility into active work
+- repeat usage after handoff
 
 ## Call To Action
 
-Bring one workflow to a 20-minute Workflow Fit Call.
+Start with the AI Workflow Intake.
 
-The call should answer whether the workflow is specific enough, valuable enough, and controlled enough to justify a fixed-scope AI Governance Setup.
+The intake should answer what the business does, what tools it already uses, where work gets messy, whether AI fits, and whether the next step should be a Workflow Build Sprint, a smaller Blueprint, or no project yet.
 
 ## Source Basis
 

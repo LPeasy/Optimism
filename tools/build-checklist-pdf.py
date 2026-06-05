@@ -96,9 +96,9 @@ def build_pdf():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     page_width, page_height = landscape(letter)
     c = canvas.Canvas(str(OUTPUT), pagesize=(page_width, page_height))
-    c.setTitle("AI Workflow Fit Worksheet v1")
+    c.setTitle("AI Workflow Intake Worksheet v1")
     c.setAuthor("Optimism")
-    c.setSubject("Optional prep worksheet for governed AI workflow fit")
+    c.setSubject("Optional prep worksheet for human-first AI-assisted workflow systems")
 
     margin = 32
     content_width = page_width - margin * 2
@@ -107,10 +107,10 @@ def build_pdf():
     c.rect(0, 0, page_width, page_height, stroke=0, fill=1)
 
     text(c, "Optimism", margin, page_height - 35, 10.5, "Helvetica-Bold", ACCENT_DARK)
-    text(c, "AI Workflow Fit Worksheet v1", margin, page_height - 62, 23, "Helvetica-Bold", INK)
+    text(c, "AI Workflow Intake Worksheet v1", margin, page_height - 62, 23, "Helvetica-Bold", INK)
     wrapped_text(
         c,
-        "Use this optional worksheet to prepare for a fit conversation, share notes internally, or clarify the workflow before a pilot decision.",
+        "Use this optional worksheet to name the messy workflow, list current tools, and clarify where custom software or AI assistance may help.",
         margin,
         page_height - 81,
         625,
@@ -133,8 +133,8 @@ def build_pdf():
     labeled_field(c, "What does the business or team do?", "business_summary", left_x + 10, top_y - 103, col_w - 20, 30, multiline=True)
     labeled_field(c, "Main customer, stakeholder, or internal user", "main_user", left_x + 10, top_y - 128, col_w - 20, 14)
 
-    section(c, "2. Current AI reality", right_x, top_y - 132, col_w, 132)
-    text(c, "Which stage is closest?", right_x + 10, top_y - 40, 7.4, "Helvetica-Bold", ACCENT_DARK)
+    section(c, "2. Tools and AI reality", right_x, top_y - 132, col_w, 132)
+    text(c, "Which stage is closest?", right_x + 10, top_y - 35, 7.4, "Helvetica-Bold", ACCENT_DARK)
     options = [
         ("ai_stage_none", "Not using AI yet"),
         ("ai_stage_experimenting", "Experimenting"),
@@ -143,8 +143,9 @@ def build_pdf():
         ("ai_stage_unmanaged", "Hard to manage"),
     ]
     for i, (name, label) in enumerate(options):
-        checkbox(c, name, right_x + 10 + (i % 3) * 113, top_y - 59 - (i // 3) * 18, label)
-    labeled_field(c, "Where is AI creating questions, delay, rework, or risk?", "current_ai_challenge", right_x + 10, top_y - 124, col_w - 20, 33, multiline=True)
+        checkbox(c, name, right_x + 10 + (i % 3) * 113, top_y - 53 - (i // 3) * 17, label)
+    labeled_field(c, "Tools already used", "tools_used", right_x + 10, top_y - 94, col_w - 20, 14)
+    labeled_field(c, "Where is AI creating questions, delay, rework, or risk?", "current_ai_challenge", right_x + 10, top_y - 124, col_w - 20, 18, multiline=True)
 
     mid_y = top_y - 150
     section(c, "3. Workflow opportunity", left_x, mid_y - 148, col_w, 148)
@@ -152,15 +153,15 @@ def build_pdf():
     labeled_field(c, "Where does it waste time, create errors, slow sales, weaken reporting, or increase risk?", "current_pain", left_x + 10, mid_y - 93, col_w - 20, 30, multiline=True)
     labeled_field(c, "What would better look like in business terms?", "desired_outcome", left_x + 10, mid_y - 136, col_w - 20, 30, multiline=True)
 
-    section(c, "4. Need and risk signals", right_x, mid_y - 148, col_w, 148)
-    wrapped_text(c, "Check the areas where the team needs clarity before trusting AI in the workflow.", right_x + 10, mid_y - 36, col_w - 20, 7.6, 9)
+    section(c, "4. System design signals", right_x, mid_y - 148, col_w, 148)
+    wrapped_text(c, "Check the areas where the team needs clarity before building or adding AI assistance.", right_x + 10, mid_y - 36, col_w - 20, 7.6, 9)
     signals = [
-        ("need_scope", "Scope: workflow, output, owner, review point"),
-        ("need_data", "Data: approved inputs, sensitive data, retention"),
-        ("need_tools", "Tools: allowed tools, access limits, blocked actions"),
-        ("need_evidence", "Evidence: sources, assumptions, exceptions"),
-        ("need_approval", "Approval: human review before business action"),
-        ("need_recovery", "Recovery: stop conditions, incidents, rollback"),
+        ("need_workflow", "Workflow: trigger, owner, output, review point"),
+        ("need_tools", "Tools: current apps, spreadsheets, inboxes, docs"),
+        ("need_handoffs", "Handoffs: who receives what and when"),
+        ("need_data", "Data: approved inputs, sensitive data, access"),
+        ("need_ai_fit", "AI fit: drafting, summaries, checks, extraction"),
+        ("need_support", "Support: training, docs, stop rules, changes"),
     ]
     for i, (name, label) in enumerate(signals):
         checkbox(c, name, right_x + 10, mid_y - 58 - i * 15, label)
@@ -189,14 +190,23 @@ def build_pdf():
     for i, (name, label) in enumerate(timeline_options):
         checkbox(c, name, margin + 565 + i * 45, bottom_y + 52, label)
 
-    labeled_field(c, "What would make a 20-minute Workflow Fit Call worth it?", "fit_call_value", margin + 10, bottom_y + 10, content_width - 20, 20)
+    text(c, "Budget readiness", margin + 10, bottom_y + 34, 7.4, "Helvetica-Bold", ACCENT_DARK)
+    budget_options = [
+        ("budget_5k_build", "Ready for a $5k+ build"),
+        ("budget_blueprint", "Need a smaller blueprint first"),
+        ("budget_exploring", "Exploring fit"),
+    ]
+    for i, (name, label) in enumerate(budget_options):
+        checkbox(c, name, margin + 10 + i * 185, bottom_y + 15, label)
+
+    labeled_field(c, "Fit-call value", "fit_call_value", margin + 565, bottom_y + 10, content_width - 575, 20)
 
     footer_y = 33
     c.setStrokeColor(LINE)
     c.line(margin, footer_y + 14, page_width - margin, footer_y + 14)
     text(c, "Worksheet for call prep only. The web form is the submitted intake record.", margin, footer_y, 8, "Helvetica-Bold", ACCENT_DARK)
-    text(c, "Source controls: Scope, Data, Tools, Evidence, Approval, Recovery.", margin + 335, footer_y, 8, "Helvetica", MUTED)
-    c.drawRightString(page_width - margin, footer_y, "optimism - ai workflow fit worksheet v1")
+    text(c, "Source controls: Workflow, Tools, Handoffs, Data, AI Fit, Support.", margin + 335, footer_y, 8, "Helvetica", MUTED)
+    c.drawRightString(page_width - margin, footer_y, "optimism - ai workflow intake worksheet v1")
 
     c.showPage()
     c.save()
