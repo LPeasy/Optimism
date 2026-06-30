@@ -3,10 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Optimism | AI Workflow Intake</title>
+    <title>Optimism | Start With One Workflow</title>
     <meta
       name="description"
-      content="Optimism builds human-first, AI-assisted workflow systems for owner-led businesses."
+      content="Name one messy workflow and see whether it is ready for a practical AI-assisted workflow build."
+    >
+    <link rel="canonical" href="https://lpeasy.github.io/Optimism/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Optimism">
+    <meta property="og:title" content="Optimism | Start With One Workflow">
+    <meta
+      property="og:description"
+      content="Name one messy workflow and see whether it is ready for a practical AI-assisted workflow build."
+    >
+    <meta property="og:url" content="https://lpeasy.github.io/Optimism/">
+    <meta
+      property="og:image"
+      content="https://lpeasy.github.io/Optimism/assets/checklist-workflow-visual.png"
+    >
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Optimism | Start With One Workflow">
+    <meta
+      name="twitter:description"
+      content="Name one messy workflow and see whether it is ready for a practical AI-assisted workflow build."
+    >
+    <meta
+      name="twitter:image"
+      content="https://lpeasy.github.io/Optimism/assets/checklist-workflow-visual.png"
     >
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="assets/checklist-workflow-visual.png" as="image">
@@ -61,24 +84,22 @@
 
           <aside class="signup-panel" id="intake-form" aria-labelledby="form-title">
             <div class="form-copy">
-              <h2 id="form-title">Start the AI Workflow Intake</h2>
+              <h2 id="form-title">Name one workflow</h2>
               <p>
-                Tell us what your business does, which tools you already use,
-                and where manual work is slowing growth. The intake helps
-                identify whether a Workflow Build Sprint or smaller Blueprint
-                is the right next step.
+                Send the short version first. If the workflow looks like a fit,
+                the full intake can help scope the next step.
               </p>
             </div>
 
-            <div class="setup-warning" id="setup-required" role="status">
+            <div class="setup-warning" id="setup-required" role="status" hidden>
               Gmail intake is active after <code>CONTACT_EMAIL</code> and
               <code>POSTAL_ADDRESS</code> are set. <code>BOOKING_LINK</code>
               is optional.
             </div>
 
             <form
-              class="lead-form"
-              id="workflow-intake-form"
+              class="lead-form quick-capture-form"
+              id="workflow-quick-capture-form"
               action="https://formsubmit.co/bc798d040aeefaf78c24be24823c8867"
               method="POST"
             >
@@ -95,120 +116,25 @@
                 <input name="company" autocomplete="organization" required>
               </label>
               <label>
-                <span>Role</span>
-                <input name="role" autocomplete="organization-title" required>
-              </label>
-              <label>
-                <span>What does your business or team do?</span>
-                <textarea
-                  name="business_summary"
-                  rows="3"
-                  placeholder="Example: We manage service jobs, estimates, scheduling, and customer follow-up."
-                  required
-                ></textarea>
-              </label>
-              <label>
-                <span>What tools do you already use?</span>
-                <textarea
-                  name="tools_used"
-                  rows="3"
-                  placeholder="Example: Gmail, Google Sheets, QuickBooks, Jobber, Airtable, Shopify, paper forms, or a shared inbox."
-                  required
-                ></textarea>
-              </label>
-              <label>
-                <span>Current AI use</span>
-                <select name="current_ai_use" required>
-                  <option value="">Select one</option>
-                  <option>Not using AI yet</option>
-                  <option>Informal experimentation</option>
-                  <option>Some recurring use</option>
-                  <option>Blocked by risk or security concerns</option>
-                  <option>Already using AI but hard to manage</option>
-                </select>
-              </label>
-              <label>
-                <span>Current AI challenge or need</span>
-                <textarea
-                  name="current_ai_challenge"
-                  rows="3"
-                  placeholder="Where could AI help, and where would it create risk, confusion, or rework?"
-                  required
-                ></textarea>
-              </label>
-              <label>
-                <span>Workflow you would improve first</span>
+                <span>Workflow getting stuck</span>
                 <textarea
                   name="workflow_candidate"
                   rows="3"
-                  placeholder="Name one recurring workflow where handoffs, status, documents, follow-up, or reporting are messy."
+                  placeholder="Example: quote handoff, weekly report, customer follow-up, document approval, job status update."
                   required
                 ></textarea>
               </label>
-              <label>
-                <span>Workflow type</span>
-                <select name="workflow_type" required>
-                  <option value="">Select one</option>
-                  <option>Lead intake or quoting</option>
-                  <option>Job, project, or customer tracking</option>
-                  <option>Scheduling or team handoffs</option>
-                  <option>Customer follow-up</option>
-                  <option>Document or email generation</option>
-                  <option>Reporting or dashboard</option>
-                  <option>Lightweight CRM</option>
-                  <option>Other recurring workflow</option>
-                </select>
-              </label>
-              <label>
-                <span>Desired result</span>
-                <select name="desired_result" required>
-                  <option value="">Select one</option>
-                  <option>Save owner or staff time</option>
-                  <option>Improve follow-up quality</option>
-                  <option>Support revenue or sales</option>
-                  <option>Reduce errors or rework</option>
-                  <option>Improve visibility into work</option>
-                  <option>Clarify whether AI fits</option>
-                </select>
-              </label>
-              <label>
-                <span>Biggest workflow or AI concern</span>
-                <select name="biggest_ai_concern" required>
-                  <option value="">Select one</option>
-                  <option>Scope is unclear</option>
-                  <option>Data boundaries</option>
-                  <option>Tool access or blocked actions</option>
-                  <option>Evidence and source support</option>
-                  <option>Human approval before business action</option>
-                  <option>Recovery or stop rules</option>
-                  <option>Staff adoption</option>
-                  <option>Unclear workflow fit</option>
-                </select>
-              </label>
-              <label>
-                <span>Implementation timeline</span>
-                <select name="implementation_timeline" required>
-                  <option value="">Select one</option>
-                  <option>Now</option>
-                  <option>Next 30 days</option>
-                  <option>Next 90 days</option>
-                  <option>Later</option>
-                </select>
-              </label>
-              <label>
-                <span>Budget readiness</span>
-                <select name="budget_readiness" required>
-                  <option value="">Select one</option>
-                  <option>Ready for a $5k+ build</option>
-                  <option>Need a smaller blueprint first</option>
-                  <option>Exploring fit</option>
-                </select>
-              </label>
+              <input type="hidden" name="capture_type" value="workflow_quick_capture">
               <input type="hidden" name="lead_source" value="optimism_landing_page">
-              <input type="hidden" name="lead_score" value="10">
+              <input type="hidden" name="utm_source" value="">
+              <input type="hidden" name="utm_medium" value="">
+              <input type="hidden" name="utm_campaign" value="">
+              <input type="hidden" name="utm_content" value="">
+              <input type="hidden" name="source_page_url" value="">
+              <input type="hidden" name="lead_score" value="20">
               <input type="hidden" name="optimism_funnel_signup" value="true">
               <input type="hidden" name="offer_focus" value="human_first_ai_assisted_systems_design">
-              <input type="hidden" name="_subject" value="AI Workflow Intake">
+              <input type="hidden" name="_subject" value="AI Workflow Quick Capture">
               <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="worksheet_pdf" value="assets/ai-workflow-fit-worksheet-v1.pdf">
@@ -227,10 +153,180 @@
                 </span>
               </label>
               <button class="button form-button" type="submit">
-                Send my intake
+                Send workflow
               </button>
-              <p class="form-status" id="form-status" role="status"></p>
+              <p class="form-status" id="quick-form-status" role="status"></p>
             </form>
+
+            <details class="full-intake-details">
+              <summary>Full AI Workflow Intake</summary>
+              <p>
+                Use this if the workflow, tools, timeline, and budget are clear
+                enough to scope a build or blueprint.
+              </p>
+
+              <form
+                class="lead-form"
+                id="workflow-intake-form"
+                action="https://formsubmit.co/bc798d040aeefaf78c24be24823c8867"
+                method="POST"
+              >
+                <label>
+                  <span>Name</span>
+                  <input name="name" autocomplete="name" required>
+                </label>
+                <label>
+                  <span>Email</span>
+                  <input name="email" type="email" autocomplete="email" required>
+                </label>
+                <label>
+                  <span>Company</span>
+                  <input name="company" autocomplete="organization" required>
+                </label>
+                <label>
+                  <span>Role</span>
+                  <input name="role" autocomplete="organization-title" required>
+                </label>
+                <label>
+                  <span>What does your business or team do?</span>
+                  <textarea
+                    name="business_summary"
+                    rows="3"
+                    placeholder="Example: We manage service jobs, estimates, scheduling, and customer follow-up."
+                    required
+                  ></textarea>
+                </label>
+                <label>
+                  <span>What tools do you already use?</span>
+                  <textarea
+                    name="tools_used"
+                    rows="3"
+                    placeholder="Example: Gmail, Google Sheets, QuickBooks, Jobber, Airtable, Shopify, paper forms, or a shared inbox."
+                    required
+                  ></textarea>
+                </label>
+                <label>
+                  <span>Current AI use</span>
+                  <select name="current_ai_use" required>
+                    <option value="">Select one</option>
+                    <option>Not using AI yet</option>
+                    <option>Informal experimentation</option>
+                    <option>Some recurring use</option>
+                    <option>Blocked by risk or security concerns</option>
+                    <option>Already using AI but hard to manage</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Current AI challenge or need</span>
+                  <textarea
+                    name="current_ai_challenge"
+                    rows="3"
+                    placeholder="Where could AI help, and where would it create risk, confusion, or rework?"
+                    required
+                  ></textarea>
+                </label>
+                <label>
+                  <span>Workflow you would improve first</span>
+                  <textarea
+                    name="workflow_candidate"
+                    rows="3"
+                    placeholder="Name one recurring workflow where handoffs, status, documents, follow-up, or reporting are messy."
+                    required
+                  ></textarea>
+                </label>
+                <label>
+                  <span>Workflow type</span>
+                  <select name="workflow_type" required>
+                    <option value="">Select one</option>
+                    <option>Lead intake or quoting</option>
+                    <option>Job, project, or customer tracking</option>
+                    <option>Scheduling or team handoffs</option>
+                    <option>Customer follow-up</option>
+                    <option>Document or email generation</option>
+                    <option>Reporting or dashboard</option>
+                    <option>Lightweight CRM</option>
+                    <option>Other recurring workflow</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Desired result</span>
+                  <select name="desired_result" required>
+                    <option value="">Select one</option>
+                    <option>Save owner or staff time</option>
+                    <option>Improve follow-up quality</option>
+                    <option>Support revenue or sales</option>
+                    <option>Reduce errors or rework</option>
+                    <option>Improve visibility into work</option>
+                    <option>Clarify whether AI fits</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Biggest workflow or AI concern</span>
+                  <select name="biggest_ai_concern" required>
+                    <option value="">Select one</option>
+                    <option>Scope is unclear</option>
+                    <option>Data boundaries</option>
+                    <option>Tool access or blocked actions</option>
+                    <option>Evidence and source support</option>
+                    <option>Human approval before business action</option>
+                    <option>Recovery or stop rules</option>
+                    <option>Staff adoption</option>
+                    <option>Unclear workflow fit</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Implementation timeline</span>
+                  <select name="implementation_timeline" required>
+                    <option value="">Select one</option>
+                    <option>Now</option>
+                    <option>Next 30 days</option>
+                    <option>Next 90 days</option>
+                    <option>Later</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Budget readiness</span>
+                  <select name="budget_readiness" required>
+                    <option value="">Select one</option>
+                    <option>Ready for a $5k+ build</option>
+                    <option>Need a smaller blueprint first</option>
+                    <option>Exploring fit</option>
+                  </select>
+                </label>
+                <input type="hidden" name="capture_type" value="workflow_full_intake">
+                <input type="hidden" name="lead_source" value="optimism_landing_page">
+                <input type="hidden" name="utm_source" value="">
+                <input type="hidden" name="utm_medium" value="">
+                <input type="hidden" name="utm_campaign" value="">
+                <input type="hidden" name="utm_content" value="">
+                <input type="hidden" name="source_page_url" value="">
+                <input type="hidden" name="lead_score" value="10">
+                <input type="hidden" name="optimism_funnel_signup" value="true">
+                <input type="hidden" name="offer_focus" value="human_first_ai_assisted_systems_design">
+                <input type="hidden" name="_subject" value="AI Workflow Intake">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="worksheet_pdf" value="assets/ai-workflow-fit-worksheet-v1.pdf">
+                <input type="hidden" name="leavebehind_pdf" value="assets/optimism-ai-workflow-setup-brief-v1.pdf">
+                <input
+                  type="hidden"
+                  name="booking_link"
+                  value="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2dqa5JcpExEoYPi5aPzILSfjcMrg64iFwFj3I3nDGNhPyYU6X4eZz817pbKwzU8_lEPSedoell"
+                >
+                <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+                <label class="consent-row">
+                  <input name="consent" type="checkbox" required>
+                  <span>
+                    I agree to send this intake to Optimism by email
+                    and receive related workflow emails. I can opt out at any time.
+                  </span>
+                </label>
+                <button class="button form-button" type="submit">
+                  Send my intake
+                </button>
+                <p class="form-status" id="form-status" role="status"></p>
+              </form>
+            </details>
 
             <div class="post-submit-panel" id="post-submit-panel" hidden>
               <h3>Next step</h3>
