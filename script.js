@@ -16,6 +16,29 @@ const placeholders = new Set([
   "POSTAL_ADDRESS"
 ]);
 
+const attributionKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
+const payloadFieldNames = [
+  "capture_type",
+  "name",
+  "email",
+  "company",
+  "role",
+  "business_summary",
+  "tools_used",
+  "current_ai_use",
+  "current_ai_challenge",
+  "workflow_candidate",
+  "workflow_type",
+  "desired_result",
+  "biggest_ai_concern",
+  "implementation_timeline",
+  "budget_readiness",
+  "offer_focus",
+  "consent",
+  "lead_score",
+  "optimism_funnel_signup"
+];
+
 function isPlaceholder(value) {
   return !value || placeholders.has(value);
 }
@@ -38,6 +61,41 @@ function leaveBehindPdfUrl() {
 
 function bookingUrl() {
   return hasValue("BOOKING_LINK") ? CONFIG.BOOKING_LINK : "";
+}
+
+function campaignAttribution() {
+  const params = new URLSearchParams(window.location.search);
+  return attributionKeys.reduce((values, key) => {
+    values[key] = params.get(key)?.trim() || "";
+    return values;
+  }, {});
+}
+
+function campaignLeadSource(form) {
+  const attribution = campaignAttribution();
+  if (attribution.utm_source.toLowerCase() === "linkedin" && attribution.utm_medium.toLowerCase() === "organic") {
+    return "linkedin_organic";
+  }
+  return attribution.utm_source || formValue(form, "lead_source") || "optimism_landing_page";
+}
+
+function applyCampaignAttribution() {
+  const attribution = campaignAttribution();
+  attributionKeys.forEach((key) => {
+    document.querySelectorAll(`[name='${key}']`).forEach((field) => {
+      field.value = attribution[key];
+    });
+  });
+
+  document.querySelectorAll("[name='source_page_url']").forEach((field) => {
+    field.value = window.location.href;
+  });
+
+  document.querySelectorAll("[name='lead_source']").forEach((field) => {
+    if (attribution.utm_source.toLowerCase() === "linkedin" && attribution.utm_medium.toLowerCase() === "organic") {
+      field.value = "linkedin_organic";
+    }
+  });
 }
 
 function applyWorksheetLinks() {
@@ -101,6 +159,7 @@ function updateSetupWarning() {
   );
 
   if (requiredMissing.length === 0) {
+    warning.hidden = true;
     warning.classList.add("is-ready");
     warning.textContent = hasValue("BOOKING_LINK")
       ? "Website intake receiver, post-submit assets, and booking links are configured."
@@ -108,6 +167,7 @@ function updateSetupWarning() {
     return;
   }
 
+  warning.hidden = false;
   warning.classList.remove("is-ready");
   warning.innerHTML = `Launch blocked until ${requiredMissing
     .map((key) => `<code>${key}</code>`)
@@ -121,15 +181,28 @@ function formValue(form, name) {
   return field.value.trim();
 }
 
+function captureType(form) {
+  return formValue(form, "capture_type") || "workflow_full_intake";
+}
+
+function captureSubjectPrefix(form) {
+  return captureType(form) === "workflow_quick_capture"
+    ? "AI Workflow Quick Capture"
+    : "AI Workflow Intake";
+}
+
 function buildIntakeEmail(form) {
   const name = formValue(form, "name");
   const company = formValue(form, "company");
-  const subject = `AI Workflow Intake - ${company || name || "Optimism lead"}`;
+  const attribution = campaignAttribution();
+  const leadSource = campaignLeadSource(form);
+  const subject = `${captureSubjectPrefix(form)} - ${company || name || "Optimism lead"}`;
   return {
     subject,
     body: [
-    "New AI Workflow Intake",
+    `New ${captureSubjectPrefix(form)}`,
     "",
+    `Capture type: ${captureType(form)}`,
     `Name: ${name}`,
     `Email: ${formValue(form, "email")}`,
     `Company: ${company}`,
@@ -146,14 +219,20 @@ function buildIntakeEmail(form) {
     `Budget readiness: ${formValue(form, "budget_readiness")}`,
     `Offer focus: ${formValue(form, "offer_focus")}`,
     `Consent: ${formValue(form, "consent")}`,
+    `Lead source: ${leadSource}`,
+    `UTM source: ${attribution.utm_source}`,
+    `UTM medium: ${attribution.utm_medium}`,
+    `UTM campaign: ${attribution.utm_campaign}`,
+    `UTM content: ${attribution.utm_content}`,
+    `Source page URL: ${window.location.href}`,
     "",
     "Post-submit assets",
     `Optional worksheet: ${worksheetPdfUrl()}`,
     `Sales brief: ${leaveBehindPdfUrl()}`,
     `Booking link: ${bookingUrl()}`,
     "",
-    "Source: optimism_landing_page",
-    "Lead score: 10",
+    `Source: ${leadSource}`,
+    `Lead score: ${formValue(form, "lead_score")}`,
     "Funnel: gmail_only"
     ].join("\n")
   };
@@ -168,35 +247,29 @@ function buildMailtoFallback(form) {
 
 function buildReceiverPayload(form) {
   const email = buildIntakeEmail(form);
-  return {
+  const attribution = campaignAttribution();
+  const payload = {
     _subject: email.subject,
     _template: "table",
     _captcha: "false",
     _url: window.location.href,
-    name: formValue(form, "name"),
-    email: formValue(form, "email"),
-    company: formValue(form, "company"),
-    role: formValue(form, "role"),
-    business_summary: formValue(form, "business_summary"),
-    tools_used: formValue(form, "tools_used"),
-    current_ai_use: formValue(form, "current_ai_use"),
-    current_ai_challenge: formValue(form, "current_ai_challenge"),
-    workflow_candidate: formValue(form, "workflow_candidate"),
-    workflow_type: formValue(form, "workflow_type"),
-    desired_result: formValue(form, "desired_result"),
-    biggest_ai_concern: formValue(form, "biggest_ai_concern"),
-    implementation_timeline: formValue(form, "implementation_timeline"),
-    budget_readiness: formValue(form, "budget_readiness"),
-    offer_focus: formValue(form, "offer_focus"),
-    consent: formValue(form, "consent"),
     worksheet_pdf: worksheetPdfUrl(),
     leavebehind_pdf: leaveBehindPdfUrl(),
     booking_link: bookingUrl(),
-    lead_source: formValue(form, "lead_source"),
-    lead_score: formValue(form, "lead_score"),
-    optimism_funnel_signup: formValue(form, "optimism_funnel_signup"),
+    lead_source: campaignLeadSource(form),
+    utm_source: attribution.utm_source,
+    utm_medium: attribution.utm_medium,
+    utm_campaign: attribution.utm_campaign,
+    utm_content: attribution.utm_content,
+    source_page_url: window.location.href,
     message: email.body
   };
+
+  payloadFieldNames.forEach((name) => {
+    payload[name] = formValue(form, name);
+  });
+
+  return payload;
 }
 
 function showPostSubmitPanel() {
@@ -222,12 +295,10 @@ async function submitIntake(form) {
   return result;
 }
 
-function wireIntakeForm() {
-  const form = document.getElementById("workflow-intake-form");
-  const status = document.getElementById("form-status");
-  const submitButton = form?.querySelector("[type='submit']");
-  if (!form || !status) return;
-
+function wireLeadForm(form) {
+  const status = form.querySelector(".form-status");
+  const submitButton = form.querySelector("[type='submit']");
+  if (!status) return;
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -240,6 +311,7 @@ function wireIntakeForm() {
     if (formValue(form, "_honey")) {
       status.textContent = "Submission received.";
       form.reset();
+      applyCampaignAttribution();
       return;
     }
 
@@ -256,6 +328,7 @@ function wireIntakeForm() {
       status.textContent = "Intake received. The brief, worksheet, and booking link are below.";
       showPostSubmitPanel();
       form.reset();
+      applyCampaignAttribution();
     } catch (error) {
       status.innerHTML = `The intake receiver could not complete the submission. <a href="${buildMailtoFallback(form)}">Send by email instead.</a>`;
     } finally {
@@ -264,9 +337,16 @@ function wireIntakeForm() {
   });
 }
 
+function wireLeadForms() {
+  document.querySelectorAll("[data-lead-form], .lead-form").forEach((form) => {
+    wireLeadForm(form);
+  });
+}
+
 applyWorksheetLinks();
 applyLeaveBehindLinks();
 applyBookingLinks();
 applyPostalAddress();
+applyCampaignAttribution();
 updateSetupWarning();
-wireIntakeForm();
+wireLeadForms();
